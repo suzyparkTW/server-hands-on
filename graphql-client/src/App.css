@@ -1,0 +1,39 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .history {
+    flex: 1;
+    height: 100%;
+
+    .dateTime {
+      margin-right: 8px;
+      color: #999;
+    }
+  }
+
+  .inputBar {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid gray;
+
+    .input {
+      width: 100%;
+      padding: 10px 8px;
+      margin-right: 8px;
+      border-radius: 4px;
+    }
+
+    .button {
+      min-width: 80px;
+      border-radius: 4px;
+      background-color: rgb(255, 123, 0);
+      font-weight: bold;
+    }
+
+    .button.disabled {
+      background-color: rgb(238, 238, 238);
+    }
+  }
+}
