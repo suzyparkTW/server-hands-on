@@ -1,6 +1,6 @@
 import * as trpcExpress from "@trpc/server/adapters/express";
 import express from "express";
-import { appRouter } from "./appRouters.js";
+import { appRouter } from "./routers/_app.js";
 import { createContext } from "./trpc.js";
 import cors from "cors";
 import { applyWSSHandler } from "@trpc/server/adapters/ws";

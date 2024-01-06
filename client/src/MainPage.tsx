@@ -1,14 +1,10 @@
-import ChatHistory from "./components/ChatHistory";
-import InputBar from "./components/InputBar";
 import "./MainPage.css";
+import useMainPage from "./useMainPage";
 
 const MainPage = () => {
-  return (
-    <div className="wrapper">
-      <ChatHistory />
-      <InputBar />
-    </div>
-  );
+  const { missionList } = useMainPage();
+
+  return <div className="wrapper">{JSON.stringify(missionList)}</div>;
 };
 
 export default MainPage;

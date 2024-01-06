@@ -1,8 +1,7 @@
 import { z } from "zod";
-import { publicProcedure, router } from "./trpc.js";
 import EventEmitter from "events";
 import { observable } from "@trpc/server/observable";
-import { client } from "./db/index.js";
+import { publicProcedure, router } from "../trpc.js";
 
 interface Chat {
   text: string;
@@ -12,13 +11,7 @@ interface Chat {
 const eventEmitter = new EventEmitter();
 const SEND_CHAT_EVENT_NAME = "sendChat";
 
-export const appRouter = router({
-  missionList: publicProcedure.query(async () => {
-    const result = await client.query('select id, date, info from mission')
-    return {
-      missionList: result
-    }
-  }),
+export const exampleRouter = router({
   helloWorld: publicProcedure.query(() => {
     return {
       message: "hello world",
@@ -48,4 +41,4 @@ export const appRouter = router({
   }),
 });
 
-export type AppRouter = typeof appRouter;
+export type AppRouter = typeof exampleRouter;
