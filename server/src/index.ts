@@ -21,7 +21,7 @@ app.use(
   trpcExpress.createExpressMiddleware({
     router: appRouter,
     createContext,
-  })
+  }),
 );
 
 const PORT = 4000;
